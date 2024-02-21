@@ -3,9 +3,7 @@ const { getAllAudioUrls } = require("google-tts-api");
 const { Player, useMainPlayer } = require("discord-player");
 const { createAudioResource } = require("discord-voip");
 const { default: axios } = require("axios");
-const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
-const ffmpeg = require('fluent-ffmpeg');
-ffmpeg.setFfmpegPath(ffmpegPath);
+
 const client = new Client({
         intents: [
                 GatewayIntentBits.GuildVoiceStates,
@@ -26,7 +24,7 @@ client.on("ready", async () => {
         console.log(`bot is online`);
 
         // await client.application.commands.set([]);
-        client.guilds.cache.get("848841415940898827", "1119784455121416202").commands.set([
+        client.guilds.cache.get("1209114589187547156").commands.set([
                 {
                         name: "join",
                         description: `join your voice channel`,
@@ -86,4 +84,4 @@ client.on("error", (err) => {
         console.log(err.stack);
 });
  
-client.login("p" + process.env.TOKEN);
+client.login(process.env.TOKEN);
