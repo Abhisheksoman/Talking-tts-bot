@@ -84,4 +84,4 @@ client.on("error", (err) => {
         console.log(err.stack);
 });
  
-client.login("p" + process.env.TOKEN);
+client.login(process.env.TOKEN);
