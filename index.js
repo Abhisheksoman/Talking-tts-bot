@@ -3,9 +3,7 @@ const { getAllAudioUrls } = require("google-tts-api");
 const { Player, useMainPlayer } = require("discord-player");
 const { createAudioResource } = require("discord-voip");
 const { default: axios } = require("axios");
-const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
-const ffmpeg = require('fluent-ffmpeg');
-ffmpeg.setFfmpegPath(ffmpegPath);
+const keep_alive = require("./keep_alive.js")
 const client = new Client({
         intents: [
                 GatewayIntentBits.GuildVoiceStates,
