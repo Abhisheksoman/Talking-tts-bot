@@ -4,6 +4,9 @@ const { Player, useMainPlayer } = require("discord-player");
 const { createAudioResource } = require("discord-voip");
 const { default: axios } = require("axios");
 const keep_alive = require("./keep_alive.js")
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+const ffmpeg = require('fluent-ffmpeg');
+ffmpeg.setFfmpegPath(ffmpegPath);
 const client = new Client({
         intents: [
                 GatewayIntentBits.GuildVoiceStates,
